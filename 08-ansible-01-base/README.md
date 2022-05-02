@@ -450,6 +450,9 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 
 6. Все изменения должны быть зафиксированы и отправлены в вашей личный репозиторий.
 
+[данные playbook](https://github.com/Ingvar78/08-ansible)
+
+
 ---
 
 ### Как оформить ДЗ?
