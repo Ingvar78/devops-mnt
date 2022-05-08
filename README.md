@@ -10,7 +10,7 @@
 
 ## Модуль 8. Система управления конфигурациями
 
-8.1. [Введение в Ansible](./08-ansible-01-base)
+8.1. [x] [Введение в Ansible](./08-ansible-01-base)
 
 8.2. [Работа с Playbook](./08-ansible-02-playbook)
 
