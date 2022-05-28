@@ -29,10 +29,19 @@
 10. Выложите playbook в репозиторий.
 11. В ответ приведите ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
+[ReadMe.md](https://github.com/Ingvar78/clickhouse-role#readme)
+
 ---
 
 ### Как оформить ДЗ?
 
 Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+
+[Clickhouse-role](https://github.com/Ingvar78/clickhouse-role.git)
+
+[Vector-role](https://github.com/Ingvar78/vector-role.git) 
+
+[Lighthouse-role](https://github.com/Ingvar78/lighthouse-role.git).
+
 
 ---

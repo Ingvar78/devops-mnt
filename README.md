@@ -12,11 +12,11 @@
 
 8.1. [x] [Введение в Ansible](./08-ansible-01-base)
 
-8.2. [Работа с Playbook](./08-ansible-02-playbook)
+8.2. [x] [Работа с Playbook](./08-ansible-02-playbook)
 
-8.3. [Использование YandexCloud](./08-ansible-03-yandex)
+8.3. [] [Использование YandexCloud](./08-ansible-03-yandex)
 
-8.4. [Работа с Roles](./08-ansible-04-role)
+8.4. [] [Работа с Roles](./08-ansible-04-role)
 
 8.5. [Тестирование Roles](./08-ansible-05-testing)
 
