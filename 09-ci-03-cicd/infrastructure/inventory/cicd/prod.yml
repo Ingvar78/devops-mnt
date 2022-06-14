@@ -2,9 +2,9 @@
 all:
   hosts:
     sonar-01:
-      ansible_host: 192.168.1.72
+      ansible_host: 51.250.91.60
     nexus-01:
-      ansible_host: 192.168.1.71
+      ansible_host: 51.250.72.245
   children:
     sonarqube:
       hosts:

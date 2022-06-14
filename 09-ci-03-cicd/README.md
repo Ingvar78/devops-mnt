@@ -25,6 +25,14 @@
 8. Запускаем анализатор повторно - проверяем, что QG пройдены успешно
 9. Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 
+Пример сканирования SonarQube с ошибкой:
+
+![sonarqube failed check](scr/SonarQube/Sonarqube-3.png)
+
+Пример сканирования SonarQube без ошибок:
+
+![sonarqube pass check](scr/SonarQube/Sonarqube-pass1.png)
+
 ## Знакомство с Nexus
 
 ### Основная часть
@@ -47,6 +55,18 @@
 2. Разархивируем, делаем так, чтобы binary был доступен через вызов в shell (или меняем переменную PATH или любой другой удобный вам способ)
 3. Удаляем из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем http соединение( раздел mirrors->id: my-repository-http-unblocker)
 4. Проверяем `mvn --version`
+
+```bash
+iva@c9:~/Documents/09-03/mvn $ mvn --version
+Apache Maven 3.6.3 (Red Hat 3.6.3-14)
+Maven home: /usr/share/maven
+Java version: 11.0.15, vendor: Red Hat, Inc., runtime: /usr/lib/jvm/java-11-openjdk-11.0.15.0.10-1.el9.x86_64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.14.0-105.el9.x86_64", arch: "amd64", family: "unix"
+iva@c9:~/Documents/09-03/mvn $ 
+
+```
+
 5. Забираем директорию [mvn](./mvn) с pom
 
 ### Основная часть
@@ -55,6 +75,59 @@
 2. Запускаем команду `mvn package` в директории с `pom.xml`, ожидаем успешного окончания
 3. Проверяем директорию `~/.m2/repository/`, находим наш артефакт
 4. В ответе присылаем исправленный файл `pom.xml`
+
+
+Загрузка пакета:
+
+![mvn package](src/Nexus/Nexus_download.png)
+
+Файл [maven-metadata.xml](scr/Nexus/maven-metadata.xml) Nexus:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>netology</groupId>
+  <artifactId>java</artifactId>
+  <versioning>
+    <latest>8_282</latest>
+    <release>8_282</release>
+    <versions>
+      <version>8_102</version>
+      <version>8_282</version>
+    </versions>
+    <lastUpdated>20220614121720</lastUpdated>
+  </versioning>
+</metadata>
+```
+
+Исправленный [pom.xml](scr/Nexus/pom.xml)
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>com.netology.app</groupId>
+  <artifactId>simple-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+   <repositories>
+    <repository>
+      <id>my-repo</id>
+      <name>maven-public</name>
+      <url>http://51.250.72.245:8081/repository/maven-public/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+     <dependency>
+      <groupId>netology</groupId>
+      <artifactId>java</artifactId>
+      <version>8_282</version>
+      <classifier>distrib</classifier>
+      <type>tar.gz</type>
+    </dependency>
+  </dependencies>
+</project>
+```
 
 ---
 
