@@ -1,16 +1,27 @@
 # Домашнее задание к занятию "09.04 Jenkins"
 
+<details>
+<summary>Подготовка к выполнению</summary>
+
 ## Подготовка к выполнению
 
 1. Создать 2 VM: для jenkins-master и jenkins-agent.
 
-В качестве VM используется две виртуальные машины: Centos 7/4VCPU/4GB RAM
+В качестве VM используется две виртуальные машины: [Centos 7/4VCPU/4GB RAM](./Centos7/ReadMe.md), так же VM можно создать через [terraform](./terraform/)
 
-2. Установить jenkins при помощи playbook'a.
+2. Установить jenkins при помощи [playbook](./infrastructure)'a.
 
+```bash
+ansible-playbook -i inventory/cicd/stage.yml site.yml
+```
 
 3. Запустить и проверить работоспособность.
+
+http://{jenkins_ip}:8080
+
 4. Сделать первоначальную настройку.
+
+</details>
 
 ## Основная часть
 
