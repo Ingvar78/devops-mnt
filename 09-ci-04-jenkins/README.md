@@ -42,7 +42,7 @@ http://{jenkins_ip}:8080
 
 
 <details>
-<summary>Declarative Pipeline Job</summary>
+<summary>Multibranch Pipeline Job</summary>
 
 ![Declarative Pipeline Job 1](./src/Screenshot3.png)
 
@@ -54,6 +54,24 @@ http://{jenkins_ip}:8080
 </details>
 
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
+
+
+<details>
+<summary>Multibranch Pipeline Job</summary>
+
+![Multibranch Pipeline Job 1](./src/Screenshot5.png)
+
+![Multibranch Pipeline Job 2](./src/Screenshot6.png)
+
+![Multibranch Pipeline 3](./src/Screenshot7.png)
+
+![Multibranch Pipeline 4](./src/Screenshot8.png)
+
+[Jenkins File](https://github.com/Ingvar78/vector-role/blob/main/Jenkinsfile)
+
+</details>
+
+
 5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](./pipeline).
 6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True), по умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
