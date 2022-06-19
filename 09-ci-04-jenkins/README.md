@@ -26,6 +26,17 @@ http://{jenkins_ip}:8080
 ## Основная часть
 
 1. Сделать Freestyle Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
+
+<details>
+<summary>Freestyle Job</summary>
+
+[FreeStyle Job 1](./src/Screenshot1.png)
+
+[FreeStyle Job 2](./src/Screenshot2.png)
+
+</details>
+
+
 2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
