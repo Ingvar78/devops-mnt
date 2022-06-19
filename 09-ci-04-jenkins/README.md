@@ -49,10 +49,7 @@ http://{jenkins_ip}:8080
 ![Declarative Pipeline Job 2](./src/Screenshot4.png)
 
 
-[![Jenkins File](https://github.com/Ingvar78/vector-role/blob/main/Jenkinsfile)]
-
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=https://github.com/Ingvar78/vector-role/blob/main/Jenkinsfile) -->
-<!-- MARKDOWN-AUTO-DOCS:END -->
+[Jenkins File](https://github.com/Ingvar78/vector-role/blob/main/Jenkinsfile)
 
 </details>
 
