@@ -30,9 +30,9 @@ http://{jenkins_ip}:8080
 <details>
 <summary>Freestyle Job</summary>
 
-[FreeStyle Job 1](./src/Screenshot1.png)
+![FreeStyle Job 1](./src/Screenshot1.png)
 
-[FreeStyle Job 2](./src/Screenshot2.png)
+![FreeStyle Job 2](./src/Screenshot2.png)
 
 </details>
 
