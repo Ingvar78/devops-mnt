@@ -77,6 +77,16 @@ http://{jenkins_ip}:8080
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 
+<details>
+<summary>Multibranch Pipeline Job</summary>
+
+![Scripted Pipeline](./src/Screenshot9.png)
+
+</details>
+
+
+[Scripted Pipeline](https://github.com/Ingvar78/example-playbook/blob/master/JenkinsScripted)
+
 ## Необязательная часть
 
 1. Создать скрипт на groovy, который будет собирать все Job, которые завершились хотя бы раз неуспешно. Добавить скрипт в репозиторий с решением с названием `AllJobFailure.groovy`.
