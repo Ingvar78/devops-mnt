@@ -121,7 +121,7 @@ else:
         "Root fs free space":psutil.disk_usage('/').free,
         "Memory available":psutil.virtual_memory().available,
         "Memory available %":psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,
-        "Memory available 1%":psutil.virtual_memory().percent,
+        "Memory used %":psutil.virtual_memory().percent,
         "Swap Free":psutil.swap_memory().free,
         "Swap Use %":psutil.swap_memory().percent
         })+"\n")
@@ -132,9 +132,13 @@ va@c9v:~/Documents/devops-mnt/10-monitoring-01-base  (10-monitoring-01-base *)$ 
 * * * * * /usr/bin/python /opt/mon/mon_1.py
 
 iva@c9v:/tmp/log $ cat 22-06-23-awesome-monitoring.log 
-{'Timestamp': 1655990881.388015, 'CPU Load': 0.0, 'Load Average': (0.28, 0.2, 0.17), 'Root fs free space': 68276400128, 'Memory available': 12861390848, 'Memory available %': 77.05234868235073, 'Memory available 1%': 22.9, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
-{'Timestamp': 1655990941.49119, 'CPU Load': 0.0, 'Load Average': (0.1, 0.16, 0.16), 'Root fs free space': 68276367360, 'Memory available': 12856438784, 'Memory available %': 77.02268096083174, 'Memory available 1%': 23.0, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
-{'Timestamp': 1655991001.590452, 'CPU Load': 0.0, 'Load Average': (0.04, 0.13, 0.15), 'Root fs free space': 68276387840, 'Memory available': 12860272640, 'Memory available %': 77.04564951942709, 'Memory available 1%': 23.0, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991541.490847, 'CPU Load': 0.0, 'Load Average': (0.1, 0.18, 0.16), 'Root fs free space': 68275892224, 'Memory available': 12838105088, 'Memory available %': 76.912844135754, 'Memory used %': 23.1, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991601.590502, 'CPU Load': 0.0, 'Load Average': (0.03, 0.15, 0.15), 'Root fs free space': 68275920896, 'Memory available': 12837502976, 'Memory available %': 76.90923689417973, 'Memory used %': 23.1, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991661.69564, 'CPU Load': 0.0, 'Load Average': (0.01, 0.12, 0.14), 'Root fs free space': 68276105216, 'Memory available': 12840787968, 'Memory available %': 76.92891721895907, 'Memory used %': 23.1, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991721.796655, 'CPU Load': 0.0, 'Load Average': (0.0, 0.09, 0.13), 'Root fs free space': 68276125696, 'Memory available': 12838965248, 'Memory available %': 76.91799733800295, 'Memory used %': 23.1, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991781.897277, 'CPU Load': 0.0, 'Load Average': (0.0, 0.07, 0.12), 'Root fs free space': 68276125696, 'Memory available': 12842033152, 'Memory available %': 76.93637709269089, 'Memory used %': 23.1, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991841.99463, 'CPU Load': 0.0, 'Load Average': (0.0, 0.06, 0.1), 'Root fs free space': 68276105216, 'Memory available': 12817575936, 'Memory available %': 76.78985437541226, 'Memory used %': 23.2, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991901.097513, 'CPU Load': 0.0, 'Load Average': (0.15, 0.08, 0.1), 'Root fs free space': 68276105216, 'Memory available': 12826767360, 'Memory available %': 76.8449200223011, 'Memory used %': 23.2, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
 
 ```
 
