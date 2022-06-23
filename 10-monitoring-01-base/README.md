@@ -37,6 +37,9 @@
 
 **Ответ:**
 
+- Организовать сбор метрик в разрезе каждого типа ошибок в разрезе каждого метода сервиса - это позволит определить время и тип ошибки.
+- Использовать open source решения для сборки логов и централизованного их хранения (Logstash, Graylog и.т.п).
+- Как исключение из правил написать скрипт сбора ошибок из текстовых логов с возможностью отправки на почту разработке. 
 
 
 >4. Вы, как опытный SRE, сделали мониторинг, куда вывели отображения выполнения SLA=99% по http кодам ответов. 
@@ -44,6 +47,19 @@
 70%, но при этом в вашей системе нет кодов ответа 5xx и 4xx. Где у вас ошибка?
 
 **Ответ:**
+
+- В данном случае не учитываются 300-е ответы сервера (различные редиректы) и информационные ответы сервера с кодом 1xx
+- Для корректной работы необходимо учитывать все коды ответов 
+
+
+-----------------------------------------
+
+Код ответа (состояния) HTTP показывает, был ли успешно выполнен определённый HTTP запрос. Коды сгруппированы в 5 классов:
+Информационные 100 - 199
+Успешные 200 - 299
+Перенаправления 300 - 399
+Клиентские ошибки 400 - 499
+Серверные ошибки 500 - 599
 
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
@@ -76,6 +92,51 @@
 б) конфигурацию cron-расписания,
 
 в) пример верно сформированного 'YY-MM-DD-awesome-monitoring.log', имеющий не менее 5 записей,
+
+**Ответ:**
+
+
+[iva@c9v:/opt/mon $ cat mon_1.py](./src/mon_1.py)
+
+```python
+#!/usr/bin/env python3
+
+import os
+import json
+import psutil
+from datetime import tzinfo, timedelta, datetime
+
+log_file_name = '/tmp/log/'+str(datetime.now().strftime("%y-%m-%d-awesome-monitoring.log"))
+timestamp = (datetime.now() - datetime(1970, 1, 1)) / timedelta(seconds=1)
+
+if not os.path.isfile(log_file_name):
+    with open(log_file_name, 'w+') as file:
+        file.write('')
+else:
+    with open(log_file_name, 'a') as file:
+        file.write(str({
+        "Timestamp":timestamp,
+        "CPU Load":psutil.cpu_percent(),
+        "Load Average":psutil.getloadavg(),
+        "Root fs free space":psutil.disk_usage('/').free,
+        "Memory available":psutil.virtual_memory().available,
+        "Memory available %":psutil.virtual_memory().available * 100 / psutil.virtual_memory().total,
+        "Memory available 1%":psutil.virtual_memory().percent,
+        "Swap Free":psutil.swap_memory().free,
+        "Swap Use %":psutil.swap_memory().percent
+        })+"\n")
+```
+
+```bash
+va@c9v:~/Documents/devops-mnt/10-monitoring-01-base  (10-monitoring-01-base *)$ crontab -l
+* * * * * /usr/bin/python /opt/mon/mon_1.py
+
+iva@c9v:/tmp/log $ cat 22-06-23-awesome-monitoring.log 
+{'Timestamp': 1655990881.388015, 'CPU Load': 0.0, 'Load Average': (0.28, 0.2, 0.17), 'Root fs free space': 68276400128, 'Memory available': 12861390848, 'Memory available %': 77.05234868235073, 'Memory available 1%': 22.9, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655990941.49119, 'CPU Load': 0.0, 'Load Average': (0.1, 0.16, 0.16), 'Root fs free space': 68276367360, 'Memory available': 12856438784, 'Memory available %': 77.02268096083174, 'Memory available 1%': 23.0, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+{'Timestamp': 1655991001.590452, 'CPU Load': 0.0, 'Load Average': (0.04, 0.13, 0.15), 'Root fs free space': 68276387840, 'Memory available': 12860272640, 'Memory available %': 77.04564951942709, 'Memory available 1%': 23.0, 'Swap Free': 8417964032, 'Swap Use %': 0.0}
+
+```
 
 P.S.: количество собираемых метрик должно быть не менее 4-х.
 P.P.S.: по желанию можно себя не ограничивать только сбором метрик из `/proc`.
