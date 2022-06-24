@@ -19,9 +19,9 @@
 6. В pom.xml необходимо поменять ссылки на репозиторий и nexus
 7. Запустите сборку по master, убедитесь что всё прошло успешно, артефакт появился в nexus
 
-[Teamcity build](./src/TC01.png)
+![Teamcity build](./src/TC01.png)
 
-[Nexus repo](./src/Nexus01.png)
+![Nexus repo](./src/Nexus01.png)
 
 8. Мигрируйте `build configuration` в репозиторий
 9. Создайте отдельную ветку `feature/add_reply` в репозитории
@@ -37,9 +37,9 @@
 19. В ответ предоставьте ссылку на репозиторий
 
 
-[Teamcity build 2](./src/TC03.png)
+![Teamcity build 2](./src/TC03.png)
 
-[Nexus repo 2](./src/Nexus02.png)
+![Nexus repo 2](./src/Nexus02.png)
 
 
 ---
