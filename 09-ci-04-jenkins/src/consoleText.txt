@@ -1,0 +1,344 @@
+Started by user Igor V
+Running as SYSTEM
+Building remotely on agent82 (linux ansible) in workspace /opt/jenkins_agent/workspace/vector-role
+The recommended git tool is: NONE
+using credential fd6bde76-2dad-46bb-9a94-afb0f2858141
+Cloning the remote Git repository
+Cloning repository git@github.com:Ingvar78/vector-role.git
+ > git init /opt/jenkins_agent/workspace/vector-role # timeout=10
+Fetching upstream changes from git@github.com:Ingvar78/vector-role.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.31.1'
+using GIT_SSH to set credentials 
+ > git fetch --tags --force --progress -- git@github.com:Ingvar78/vector-role.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url git@github.com:Ingvar78/vector-role.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision cee2a9c359567395dafd54f6b132aa2546b965c9 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cee2a9c359567395dafd54f6b132aa2546b965c9 # timeout=10
+Commit message: "Update molecule.yml"
+ > git rev-list --no-walk cee2a9c359567395dafd54f6b132aa2546b965c9 # timeout=10
+[vector-role] $ /bin/sh -xe /tmp/jenkins13019796865479094600.sh
++ pip3 install --user 'molecule<3.5.0' molecule_docker 'ansible-lint<6.0.0' flake8
+Requirement already satisfied: molecule<3.5.0 in /home/jenkins/.local/lib/python3.6/site-packages (3.4.1)
+Requirement already satisfied: molecule_docker in /home/jenkins/.local/lib/python3.6/site-packages (1.1.0)
+Requirement already satisfied: ansible-lint<6.0.0 in /home/jenkins/.local/lib/python3.6/site-packages (5.4.0)
+Requirement already satisfied: flake8 in /usr/local/lib/python3.6/site-packages (4.0.1)
+Requirement already satisfied: packaging in /usr/local/lib/python3.6/site-packages (from molecule<3.5.0) (21.3)
+Requirement already satisfied: setuptools>=42 in /usr/local/lib/python3.6/site-packages (from molecule<3.5.0) (59.6.0)
+Requirement already satisfied: enrich>=1.2.5 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (1.2.7)
+Requirement already satisfied: paramiko<3,>=2.5.0 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (2.11.0)
+Requirement already satisfied: PyYAML<6,>=5.1 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (5.4.1)
+Requirement already satisfied: Jinja2>=2.11.3 in /usr/local/lib/python3.6/site-packages (from molecule<3.5.0) (3.0.3)
+Requirement already satisfied: cookiecutter>=1.7.3 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (1.7.3)
+Requirement already satisfied: click<9,>=8.0 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (8.0.4)
+Requirement already satisfied: pluggy<2.0,>=0.7.1 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (0.13.1)
+Requirement already satisfied: rich>=9.5.1 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (12.4.4)
+Requirement already satisfied: dataclasses in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (0.8)
+Requirement already satisfied: selinux in /usr/lib64/python3.6/site-packages (from molecule<3.5.0) (2.9)
+Requirement already satisfied: click-help-colors>=0.9 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (0.9.1)
+Requirement already satisfied: cerberus!=1.3.3,!=1.3.4,>=1.3.1 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (1.3.2)
+Requirement already satisfied: subprocess-tee>=0.3.2 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule<3.5.0) (0.3.5)
+Requirement already satisfied: docker>=4.3.1 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule_docker) (5.0.3)
+Requirement already satisfied: ansible-compat>=0.5.0 in /home/jenkins/.local/lib/python3.6/site-packages (from molecule_docker) (1.0.0)
+Requirement already satisfied: requests in /home/jenkins/.local/lib/python3.6/site-packages (from molecule_docker) (2.27.1)
+Requirement already satisfied: tenacity in /home/jenkins/.local/lib/python3.6/site-packages (from ansible-lint<6.0.0) (8.0.1)
+Requirement already satisfied: ruamel.yaml<1,>=0.15.34 in /home/jenkins/.local/lib/python3.6/site-packages (from ansible-lint<6.0.0) (0.17.21)
+Requirement already satisfied: wcmatch>=7.0 in /home/jenkins/.local/lib/python3.6/site-packages (from ansible-lint<6.0.0) (8.3)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.6/site-packages (from ansible-lint<6.0.0) (4.1.1)
+Requirement already satisfied: importlib-metadata<4.3 in /usr/local/lib/python3.6/site-packages (from flake8) (4.2.0)
+Requirement already satisfied: pycodestyle<2.9.0,>=2.8.0 in /usr/local/lib/python3.6/site-packages (from flake8) (2.8.0)
+Requirement already satisfied: mccabe<0.7.0,>=0.6.0 in /usr/local/lib/python3.6/site-packages (from flake8) (0.6.1)
+Requirement already satisfied: pyflakes<2.5.0,>=2.4.0 in /usr/local/lib/python3.6/site-packages (from flake8) (2.4.0)
+Requirement already satisfied: cached-property~=1.5 in /home/jenkins/.local/lib/python3.6/site-packages (from ansible-compat>=0.5.0->molecule_docker) (1.5.2)
+Requirement already satisfied: binaryornot>=0.4.4 in /home/jenkins/.local/lib/python3.6/site-packages (from cookiecutter>=1.7.3->molecule<3.5.0) (0.4.4)
+Requirement already satisfied: six>=1.10 in /usr/lib/python3.6/site-packages (from cookiecutter>=1.7.3->molecule<3.5.0) (1.11.0)
+Requirement already satisfied: poyo>=0.5.0 in /home/jenkins/.local/lib/python3.6/site-packages (from cookiecutter>=1.7.3->molecule<3.5.0) (0.5.0)
+Requirement already satisfied: python-slugify>=4.0.0 in /home/jenkins/.local/lib/python3.6/site-packages (from cookiecutter>=1.7.3->molecule<3.5.0) (6.1.2)
+Requirement already satisfied: jinja2-time>=0.2.0 in /home/jenkins/.local/lib/python3.6/site-packages (from cookiecutter>=1.7.3->molecule<3.5.0) (0.2.0)
+Requirement already satisfied: websocket-client>=0.32.0 in /home/jenkins/.local/lib/python3.6/site-packages (from docker>=4.3.1->molecule_docker) (1.3.1)
+Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.6/site-packages (from importlib-metadata<4.3->flake8) (3.6.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib64/python3.6/site-packages (from Jinja2>=2.11.3->molecule<3.5.0) (2.0.1)
+Requirement already satisfied: bcrypt>=3.1.3 in /home/jenkins/.local/lib/python3.6/site-packages (from paramiko<3,>=2.5.0->molecule<3.5.0) (3.2.2)
+Requirement already satisfied: cryptography>=2.5 in /usr/local/lib64/python3.6/site-packages (from paramiko<3,>=2.5.0->molecule<3.5.0) (37.0.2)
+Requirement already satisfied: pynacl>=1.0.1 in /home/jenkins/.local/lib/python3.6/site-packages (from paramiko<3,>=2.5.0->molecule<3.5.0) (1.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/jenkins/.local/lib/python3.6/site-packages (from requests->molecule_docker) (2022.6.15)
+Requirement already satisfied: idna<4,>=2.5 in /home/jenkins/.local/lib/python3.6/site-packages (from requests->molecule_docker) (3.3)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /home/jenkins/.local/lib/python3.6/site-packages (from requests->molecule_docker) (2.0.12)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/jenkins/.local/lib/python3.6/site-packages (from requests->molecule_docker) (1.26.9)
+Requirement already satisfied: commonmark<0.10.0,>=0.9.0 in /home/jenkins/.local/lib/python3.6/site-packages (from rich>=9.5.1->molecule<3.5.0) (0.9.1)
+Requirement already satisfied: pygments<3.0.0,>=2.6.0 in /home/jenkins/.local/lib/python3.6/site-packages (from rich>=9.5.1->molecule<3.5.0) (2.12.0)
+Requirement already satisfied: ruamel.yaml.clib>=0.2.6 in /home/jenkins/.local/lib/python3.6/site-packages (from ruamel.yaml<1,>=0.15.34->ansible-lint<6.0.0) (0.2.6)
+Requirement already satisfied: bracex>=2.1.1 in /home/jenkins/.local/lib/python3.6/site-packages (from wcmatch>=7.0->ansible-lint<6.0.0) (2.2.1)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.6/site-packages (from packaging->molecule<3.5.0) (3.0.9)
+Requirement already satisfied: cffi>=1.1 in /usr/local/lib64/python3.6/site-packages (from bcrypt>=3.1.3->paramiko<3,>=2.5.0->molecule<3.5.0) (1.15.0)
+Requirement already satisfied: chardet>=3.0.2 in /home/jenkins/.local/lib/python3.6/site-packages (from binaryornot>=0.4.4->cookiecutter>=1.7.3->molecule<3.5.0) (4.0.0)
+Requirement already satisfied: arrow in /home/jenkins/.local/lib/python3.6/site-packages (from jinja2-time>=0.2.0->cookiecutter>=1.7.3->molecule<3.5.0) (1.2.2)
+Requirement already satisfied: text-unidecode>=1.3 in /home/jenkins/.local/lib/python3.6/site-packages (from python-slugify>=4.0.0->cookiecutter>=1.7.3->molecule<3.5.0) (1.3)
+Requirement already satisfied: pycparser in /usr/local/lib/python3.6/site-packages (from cffi>=1.1->bcrypt>=3.1.3->paramiko<3,>=2.5.0->molecule<3.5.0) (2.21)
+Requirement already satisfied: python-dateutil>=2.7.0 in /home/jenkins/.local/lib/python3.6/site-packages (from arrow->jinja2-time>=0.2.0->cookiecutter>=1.7.3->molecule<3.5.0) (2.8.2)
++ docker --version
+Docker version 20.10.17, build 100c701
++ ansible --version
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+ansible 2.10.17
+  config file = None
+  configured module search path = ['/home/jenkins/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.6/site-packages/ansible
+  executable location = /usr/local/bin/ansible
+  python version = 3.6.8 (default, Mar 25 2022, 11:15:52) [GCC 8.5.0 20210514 (Red Hat 8.5.0-10)]
++ ansible-lint --version
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+WARNING: PATH altered to include /usr/bin
+ansible-lint 5.4.0 using ansible 2.10.17
++ molecule --version
+molecule 3.4.1 using python 3.6 
+    ansible:2.10.17
+    delegated:3.4.1 from molecule
+    docker:1.1.0 from molecule_docker requiring collections: community.docker>=1.9.1
++ molecule test -s centos_7
+INFO     centos_7 scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun...
+INFO     Guessed /opt/jenkins_agent/workspace/vector-role as project root directory
+WARNING  Computed fully qualified role name of vector does not follow current galaxy requirements.
+Please edit meta/main.yml and assure we can correctly determine full role name:
+
+galaxy_info:
+role_name: my_name  # if absent directory name hosting role is used instead
+namespace: my_galaxy_namespace  # if absent, author is used instead
+
+Namespace: https://galaxy.ansible.com/docs/contributing/namespaces.html#galaxy-namespace-limitations
+Role: https://galaxy.ansible.com/docs/contributing/creating_role.html#role-names
+
+As an alternative, you can add 'role-name' to either skip_list or warn_list.
+
+INFO     Using /home/jenkins/.cache/ansible-lint/8cb146/roles/vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Added ANSIBLE_ROLES_PATH=~/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/jenkins/.cache/ansible-lint/8cb146/roles
+INFO     Running centos_7 > dependency
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+WARNING  Skipping, missing the requirements file.
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+WARNING  Skipping, missing the requirements file.
+INFO     Running centos_7 > lint
+INFO     Lint is disabled.
+INFO     Running centos_7 > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running centos_7 > destroy
+INFO     Sanity checks: 'docker'
+/home/jenkins/.local/lib/python3.6/site-packages/paramiko/transport.py:33: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.hazmat.backends import default_backend
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) deletion to complete (300 retries left).
+ok: [localhost] => (item=instance)
+
+TASK [Delete docker networks(s)] ***********************************************
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Running centos_7 > syntax
+
+playbook: /opt/jenkins_agent/workspace/vector-role/molecule/centos_7/converge.yml
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+INFO     Running centos_7 > create
+
+PLAY [Create] ******************************************************************
+
+TASK [Log into a Docker registry] **********************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+skipping: [localhost] => (item=None)
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+ok: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Create Dockerfiles from image names] *************************************
+skipping: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Discover local Docker images] ********************************************
+ok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 0, 'ansible_index_var': 'i'})
+
+TASK [Build an Ansible compatible image (new)] *********************************
+skipping: [localhost] => (item=molecule_local/docker.io/pycontribs/centos:7)
+
+TASK [Create docker network(s)] ************************************************
+
+TASK [Determine the CMD directives] ********************************************
+ok: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Create molecule instance(s)] *********************************************
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item={'started': 1, 'finished': 0, 'ansible_job_id': '544135403329.10853', 'results_file': '/home/jenkins/.ansible_async/544135403329.10853', 'changed': True, 'failed': False, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=5    changed=2    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0
+
+INFO     Running centos_7 > prepare
+WARNING  Skipping, prepare playbook not configured.
+INFO     Running centos_7 > converge
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+ok: [instance]
+
+TASK [Include vector-role] *****************************************************
+
+TASK [vector-role : Vector | Get vector distrib | CentOS] **********************
+changed: [instance]
+
+TASK [vector-role : Vector | Install vector rpm | CentOS] **********************
+changed: [instance]
+
+TASK [vector-role : Add vector user to systemd-journal group | CentOS] *********
+ok: [instance]
+
+TASK [vector-role : Get Vector distrib | Ubuntu] *******************************
+skipping: [instance]
+
+TASK [vector-role : Create systemd unit Vector] ********************************
+skipping: [instance]
+
+TASK [vector-role : Install Vector packages | Ubuntu] **************************
+skipping: [instance]
+
+TASK [vector-role : Add vector user to systemd-journal group | Ubuntu] *********
+skipping: [instance]
+
+TASK [vector-role : Vector | Update vector config] *****************************
+changed: [instance]
+
+TASK [vector-role : Vector | Create vector config] *****************************
+changed: [instance]
+
+RUNNING HANDLER [vector-role : Start vector service | CentOS] ******************
+skipping: [instance]
+
+PLAY RECAP *********************************************************************
+instance                   : ok=6    changed=4    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running centos_7 > idempotence
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+ok: [instance]
+
+TASK [Include vector-role] *****************************************************
+
+TASK [vector-role : Vector | Get vector distrib | CentOS] **********************
+ok: [instance]
+
+TASK [vector-role : Vector | Install vector rpm | CentOS] **********************
+ok: [instance]
+
+TASK [vector-role : Add vector user to systemd-journal group | CentOS] *********
+ok: [instance]
+
+TASK [vector-role : Get Vector distrib | Ubuntu] *******************************
+skipping: [instance]
+
+TASK [vector-role : Create systemd unit Vector] ********************************
+skipping: [instance]
+
+TASK [vector-role : Install Vector packages | Ubuntu] **************************
+skipping: [instance]
+
+TASK [vector-role : Add vector user to systemd-journal group | Ubuntu] *********
+skipping: [instance]
+
+TASK [vector-role : Vector | Update vector config] *****************************
+ok: [instance]
+
+TASK [vector-role : Vector | Create vector config] *****************************
+ok: [instance]
+
+PLAY RECAP *********************************************************************
+instance                   : ok=6    changed=0    unreachable=0    failed=0    skipped=4    rescued=0    ignored=0
+
+INFO     Idempotence completed successfully.
+INFO     Running centos_7 > side_effect
+WARNING  Skipping, side effect playbook not configured.
+INFO     Running centos_7 > verify
+INFO     Running Ansible Verifier
+
+PLAY [Verify] ******************************************************************
+
+TASK [Example assertion] *******************************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+ok: [instance] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Get Vector version] ******************************************************
+ok: [instance]
+
+TASK [Assert Vector instalation] ***********************************************
+ok: [instance] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Validation Vector configuration] *****************************************
+ok: [instance]
+
+TASK [Assert Vector validate config] *******************************************
+ok: [instance] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+PLAY RECAP *********************************************************************
+instance                   : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+INFO     Verifier completed successfully.
+INFO     Running centos_7 > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running centos_7 > destroy
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Destroy molecule instance(s)] ********************************************
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+FAILED - RETRYING: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=instance)
+
+TASK [Delete docker networks(s)] ***********************************************
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Pruning extra files from scenario ephemeral directory
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is disabled by the node property...
+[WS-CLEANUP] done
+Finished: SUCCESS
