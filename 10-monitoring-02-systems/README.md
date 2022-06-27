@@ -110,7 +110,7 @@ b2348307c671   kapacitor               "/entrypoint.sh kapa…"   10 hours ago  
 c45791fca7e0   sandbox_documentation   "/documentation/docu…"   10 hours ago   Up 4 minutes   0.0.0.0:3010->3000/tcp, :::3010->3000/tcp        
 ```
 
-</detail>
+</details>
 
 
 А также скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`).
