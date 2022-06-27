@@ -150,6 +150,23 @@ P.S.: если при запуске некоторые контейнеры б�
   endpoint = "unix:///var/run/docker.sock"
 ```
 
+* Данный инпут уже присутсвует в конфиге telegraf.conf
+
+* Для того что бы появились метрики потребовалось внести изменнеия в docker-compose.yml указав 
+
+```
+iva@c9v:~/Documents/10.02/sandbox  (master *)$ export dockerGID=$(stat -c '%g' /var/run/docker.sock)
+iva@c9v:~/Documents/10.02/sandbox  (master *)$ cat docker-compose.yml
+...
+  telegraf:
+    # Full tag list: https://hub.docker.com/r/library/telegraf/tags/
+    user: "telegraf:$dockerGID"
+...
+
+```
+
+!["telegraf"."autogen"."docker_container_mem"](./src/chronograf_docker.png)
+
 Дополнительно вам может потребоваться донастройка контейнера telegraf в `docker-compose.yml` дополнительного volume и 
 режима privileged:
 ```
@@ -185,6 +202,8 @@ P.S.: если при запуске некоторые контейнеры б�
     - фантазируйте)
     
     ---
+
+![Dashboard](./src/chronograf_dash.png)
 
 ### Как оформить ДЗ?
 
