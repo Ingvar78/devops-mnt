@@ -56,7 +56,7 @@ iva@c9v:~/Documents/10.03 $
 Создайте Dashboard и в ней создайте следующие Panels:
 - Утилизация CPU для nodeexporter (в процентах, 100-idle)
 
-`100 - (avg by (instance) (rate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[1m])) * 100)`
+    `100 - (avg by (instance) (rate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[1m])) * 100)`
 
 - CPULA 1/5/15
 
@@ -72,6 +72,9 @@ iva@c9v:~/Documents/10.03 $
 
     `node_filesystem_free_bytes{job="nodeexporter",mountpoint="/"}`
 
+в дальнейшем изменено на % свободного места
+    `100 - ((node_filesystem_avail_bytes{mountpoint="/",job="nodeexporter"} * 100) / node_filesystem_size_bytes{mountpoint="/",job="nodeexporter"})`
+
 
 Для решения данного ДЗ приведите promql запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
@@ -82,6 +85,8 @@ iva@c9v:~/Documents/10.03 $
 
 Для решения ДЗ - приведите скриншот вашей итоговой Dashboard.
 
+![Dashboard with aler](./src/dashboard3.png)
+
 ## Задание 4
 Сохраните ваш Dashboard.
 
@@ -90,6 +95,8 @@ iva@c9v:~/Documents/10.03 $
 Далее скопируйте отображаемое json-содержимое в отдельный файл и сохраните его.
 
 В решении задания - приведите листинг этого файла.
+
+![Json Model](./src/grafana.json)
 
 ---
 
