@@ -23,11 +23,30 @@
 ### Задание 1
 Используя директорию [help](./help) внутри данного домашнего задания - запустите связку prometheus-grafana.
 
+```bash
+iva@c9v:~/Documents/10.03 $ docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+d804c658566f   grafana/grafana:7.4.0       "/run.sh"                8 minutes ago   Up 8 minutes   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   grafana
+9ec45047b0e5   prom/prometheus:v2.24.1     "/bin/prometheus --c…"   8 minutes ago   Up 8 minutes   9090/tcp                                    prometheus
+a87d53a839a0   prom/node-exporter:v1.3.1   "/bin/node_exporter …"   8 minutes ago   Up 8 minutes   9100/tcp                                    nodeexporter
+iva@c9v:~/Documents/10.03 $ docker container inspect 9ec45047b0e5 | grep IPAddress
+            "SecondaryIPAddresses": null,
+            "IPAddress": "",
+                    "IPAddress": "172.18.0.3",
+iva@c9v:~/Documents/10.03 $ 
+```
+
 Зайдите в веб-интерфейс графана, используя авторизационные данные, указанные в манифесте docker-compose.
+
+!A: http://localhost:3000/login
 
 Подключите поднятый вами prometheus как источник данных.
 
+!A: Переходим в web-интерфейс Grafana, Configuration->Data sources, в строке поиска вводим prometeus и указываем адрес http://172.18.0.3:9090.
+
 Решение домашнего задания - скриншот веб-интерфейса grafana со списком подключенных Datasource.
+
+![Интерфейс grafana](./src/grafana1.png)
 
 ## Задание 2
 Изучите самостоятельно ресурсы:
