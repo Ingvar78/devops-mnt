@@ -97,7 +97,7 @@ iva@c9v:~/Documents/10.03 $
 В решении задания - приведите листинг этого файла.
 
 <details>
-     <summary>Результат выполнения команд:</summary>
+     <summary>JSON Model:</summary>
     <br>
 
 ```json
