@@ -55,11 +55,27 @@ iva@c9v:~/Documents/10.03 $
 
 Создайте Dashboard и в ней создайте следующие Panels:
 - Утилизация CPU для nodeexporter (в процентах, 100-idle)
+
+`100 - (avg by (instance) (rate(node_cpu_seconds_total{job="nodeexporter",mode="idle"}[1m])) * 100)`
+
 - CPULA 1/5/15
+
+    `node_load1{job="nodeexporter"}`
+    `node_load5{job="nodeexporter"}`
+    `node_load15{job="nodeexporter"}`
+
 - Количество свободной оперативной памяти
+
+    `node_memory_MemFree_bytes{job="nodeexporter"}`
+
 - Количество места на файловой системе
 
+    `node_filesystem_free_bytes{job="nodeexporter",mountpoint="/"}`
+
+
 Для решения данного ДЗ приведите promql запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+
+![Dashboard](./src/dashboard2.png)
 
 ## Задание 3
 Создайте для каждой Dashboard подходящее правило alert (можно обратиться к первой лекции в блоке "Мониторинг").
