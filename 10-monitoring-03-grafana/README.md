@@ -38,11 +38,11 @@ iva@c9v:~/Documents/10.03 $
 
 Зайдите в веб-интерфейс графана, используя авторизационные данные, указанные в манифесте docker-compose.
 
-!A: http://localhost:3000/login
+# http://localhost:3000/login
 
 Подключите поднятый вами prometheus как источник данных.
 
-!A: Переходим в web-интерфейс Grafana, Configuration->Data sources, в строке поиска вводим prometeus и указываем адрес http://172.18.0.3:9090.
+# Переходим в web-интерфейс Grafana, Configuration->Data sources, в строке поиска вводим prometeus и указываем адрес http://172.18.0.3:9090.
 
 Решение домашнего задания - скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
