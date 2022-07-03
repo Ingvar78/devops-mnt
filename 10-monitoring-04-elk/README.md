@@ -40,8 +40,29 @@ Filebeat следует сконфигурировать для отправки
 
 Результатом выполнения данного задания должны быть:
 - скриншот `docker ps` через 5 минут после старта всех контейнеров (их должно быть 5)
+
+```bash
+iva@c9v:~/Documents/10.04/7.16.2 $ docker ps
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS         PORTS                                                           NAMES
+ec40e9319128   elastic/logstash:7.16.2   "/usr/local/bin/dock…"   17 minutes ago   Up 2 minutes   5044/tcp, 9600/tcp, 0.0.0.0:5046->5046/tcp, :::5046->5046/tcp   logstash
+a97701a755c3   kibana:7.16.2             "/bin/tini -- /usr/l…"   17 minutes ago   Up 2 minutes   0.0.0.0:5601->5601/tcp, :::5601->5601/tcp                       kibana
+663c3eb59157   elasticsearch:7.16.2      "/bin/tini -- /usr/l…"   17 minutes ago   Up 2 minutes   0.0.0.0:9200->9200/tcp, :::9200->9200/tcp, 9300/tcp             es-hot
+5cd22c021f30   elasticsearch:7.16.2      "/bin/tini -- /usr/l…"   17 minutes ago   Up 2 minutes   9200/tcp, 9300/tcp                                              es-warm
+55854ac75dca   python:3.9-alpine         "python3 /opt/run.py"    17 minutes ago   Up 2 minutes                                                                   some_app
+iva@c9v:~/Documents/10.04/7.16.2 $ docker container inspect a97701a755c3  | grep IPAddress
+            "SecondaryIPAddresses": null,
+            "IPAddress": "",
+                    "IPAddress": "172.20.0.5",
+```
+
 - скриншот интерфейса kibana
+
+![Kibana screen](./src/kibana01.png)
+
 - docker-compose манифест (если вы не использовали директорию help)
+
+* Использовался [help](./help) c модификацией в части использования docker-image, ввиду не возможности использовать репозиторий elastic.co.
+
 - ваши yml конфигурации для стека (если вы не использовали директорию help)
 
 ## Задание 2
