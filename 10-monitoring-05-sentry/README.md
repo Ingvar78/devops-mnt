@@ -17,6 +17,9 @@ Free cloud account имеет следующие ограничения:
 
 Для выполнения задания - пришлите скриншот меню Projects.
 
+![Sentry Project](./src/Sentry01.png)
+
+
 ## Задание 2
 
 Создайте python проект и нажмите `Generate sample event` для генерации тестового события.
