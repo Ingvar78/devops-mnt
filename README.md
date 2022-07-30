@@ -33,11 +33,11 @@
 
 9.3. [x] [Процессы CI/CD](./09-ci-03-cicd/README.md)
 
-9.4. [] [Jenkins](./09-ci-04-jenkins/README.md)
+9.4. [x] [Jenkins](./09-ci-04-jenkins/README.md)
 
-9.5. [] [Teamcity](./09-ci-05-teamcity/README.md)
+9.5. [x] [Teamcity](./09-ci-05-teamcity/README.md)
 
-9.6. [Gitlab](./09-ci-06-gitlab/README.md)
+9.6. [] [Gitlab](./09-ci-06-gitlab/README.md)
 
 ## Модуль 10. Системы мониторинга
 
@@ -45,13 +45,13 @@
 
 10.2. [x] [Системы для мониторинга](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-02-systems)
 
-10.3. [] [Средство визуализации Grafana](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-03-grafana)
+10.3. [x] [Средство визуализации Grafana](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-03-grafana)
 
-10.4. [Система сбора логов ELK](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-04-elk)
+10.4. [] [Система сбора логов ELK](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-04-elk)
 
-10.5. [Система-перехватчик ошибок Sentry](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-05-sentry)
+10.5. [x] [Система-перехватчик ошибок Sentry](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-05-sentry)
 
-10.6. [Инцидент-менеджмент](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-06-incident-management)
+10.6. [] [Инцидент-менеджмент](https://github.com/netology-code/mnt-homeworks/tree/master/10-monitoring-06-incident-management)
 
 
 ## Дополнительные материалы к лекциям
